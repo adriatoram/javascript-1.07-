@@ -1,5 +1,5 @@
 test('25_es2023-1: Array findLast and findLastIndex', () => {
-  //Utilitza els mètodes findLast i findLastIndex per trobar l'últim número parell i el seu índex.
+  // Utilitza `findLast()` i `findLastIndex()` per trobar l’últim número parell i la seva posició dins de l’array.
   const array = [1, 2, 3, 4, 5]
 
   const lastEven = null // Resol aquí...
@@ -9,15 +9,8 @@ test('25_es2023-1: Array findLast and findLastIndex', () => {
   expect(lastEvenIndex).toBe(3)
 })
 
-test('25_es2023-2: Hashbangs in JavaScript files', () => {
-  //Escriu un script amb un hashbang i comprova que no causa errors.
-  const script = null // Resol aquí...
-
-  expect(() => eval(script)).not.toThrow()
-})
-
-test('25_es2023-3: Symbol.prototype.description', () => {
-  //Crea un símbol amb una descripció i comprova que la descripció és correcta.
+test('25_es2023-2: Symbol.prototype.description', () => {
+  // Crea un símbol amb una descripció i comprova que es pot accedir a través de la propietat `description`.
   const symbol = null // Resol aquí...
 
   expect(symbol.description).toBe('description')

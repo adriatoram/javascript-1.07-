@@ -11,7 +11,7 @@ const pickApple = (ripeness) => {
       if (ripeness === 'ripe') {
         resolve('ripe apple')
       } else if (ripeness === 'unripe') {
-        reject('unripe apple')
+        reject(new Error('unripe apple'))
       } else {
         reject(new Error('out of apples'))
       }
@@ -23,55 +23,36 @@ test('14_promises-1: should resolve', () => {
   return pickApple('ripe')
     .then(
       result => {
-        // throw new Error('això no s'hauria d'executar')
-        // expect(result).toBe(/*INTRODUEIX LA TEVA RESPOSTA AQUÍ*/)
-        throw new Error('assert o llança aquí')
+        // comprova el valor resolt de la promesa
+        expect(result).toBe(/* INTRODUEIX LA TEVA RESPOSTA AQUÍ */)
       },
       error => {
-        // throw new Error('això no s'hauria d'executar')
-        // expect(error).toBe(/*INTRODUEIX LA TEVA RESPOSTA AQUÍ*/)
-        throw new Error('assert o llança aquí')
+        throw new Error("aquest bloc no s'hauria d'executar")
       },
     )
-    .catch(error => {
-      // throw new Error('això no s'hauria d'executar')
-      // expect(error).toBe(/*INTRODUEIX LA TEVA RESPOSTA AQUÍ*/)
-      throw new Error('assert o llança aquí')
-    })
 })
 
 test('14_promises-2: should reject', () => {
   return pickApple('unripe')
     .then(
       result => {
-        // throw new Error('això no s'hauria d'executar')
-        // expect(result).toBe(/*INTRODUEIX LA TEVA RESPOSTA AQUÍ*/)
-        throw new Error('assert o llança aquí')
+        throw new Error("aquest bloc no s'hauria d'executar")
       },
       error => {
-        // throw new Error('això no s'hauria d'executar')
-        // expect(error).toBe(/*INTRODUEIX LA TEVA RESPOSTA AQUÍ*/)
-        throw new Error('assert o llança aquí')
+        // comprova el missatge de l’error rebutjat
+        expect(error.message).toBe(/* INTRODUEIX LA TEVA RESPOSTA AQUÍ */)
       },
     )
-    .catch(error => {
-      // throw new Error('això no s'hauria d'executar')
-      // expect(error).toBe(/*INTRODUEIX LA TEVA RESPOSTA AQUÍ*/)
-      throw new Error('assert o llança aquí')
-    })
 })
 
 test('14_promises-3: errors can be caught', () => {
   return pickApple()
     .then(result => {
-      // throw new Error('això no s'hauria d'executar')
-      // expect(result).toBe(/*INTRODUEIX LA TEVA RESPOSTA AQUÍ*/)
-      throw new Error('assert o llança aquí')
+      throw new Error("aquest bloc no s'hauria d'executar")
     })
     .catch(error => {
-      // throw new Error('això no s'hauria d'executar')
-      // expect(error).toBe(/*INTRODUEIX LA TEVA RESPOSTA AQUÍ*/)
-      throw new Error('assert o llança aquí')
+      // comprova el missatge de l’error capturat
+      expect(error.message).toBe(/* INTRODUEIX LA TEVA RESPOSTA AQUÍ */)
     })
 })
 

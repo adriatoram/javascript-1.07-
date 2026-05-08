@@ -36,22 +36,29 @@ test('10_class-4: can have static methods', () => {
   // i afegeix un mètode estàtic create que prengui un nom i retorni una instància
 
   const animal = new Animal()
+  const dog = Animal.create('Dog')
 
   expect(animal.create).toBeUndefined()
   expect(Animal.create).toBeDefined()
+
+  expect(dog instanceof Animal).toBe(true)
+  expect(dog.name).toBe('Dog')
 })
 
 test('10_class-5: can extend another class', () => {
   // Crea una classe Animal
   // Crea una classe Dog que extengui Animal
-  // Afegeix el mètode sayName a Dog
+  // Afegeix un mètode `sayName` a `Dog` que retorni el nom de la instància.
 
   const dog = new Dog('Fido')
 
   expect(dog instanceof Dog).toBe(true)
   expect(dog instanceof Animal).toBe(true)
+
   expect(Animal.prototype.sayName).toBeUndefined()
   expect(Dog.prototype.sayName).toBeDefined()
+
+  expect(dog.sayName()).toBe('My name is: Fido')
 })
 
 test('10_class-6: can use property setters and getters', () => {

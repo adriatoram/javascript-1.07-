@@ -1,5 +1,5 @@
 test('20_generators-1: should yield objects with value and done properties', () => {
-  const odds = giveMeOneOddNumber()
+  const odds = giveMeOddNumbers()
 
   // Comprova que els valors generats tenen les propietats value i done
   expect(odds.next().value).toBe(/* INTRODUEIX LA TEVA RESPOSTA AQUÍ */)
@@ -9,7 +9,7 @@ test('20_generators-1: should yield objects with value and done properties', () 
   expect(odds.next().value).toBe(/* INTRODUEIX LA TEVA RESPOSTA AQUÍ */)
   expect(odds.next().done).toBe(/* INTRODUEIX LA TEVA RESPOSTA AQUÍ */)
 
-  function* giveMeOneOddNumber() {
+  function* giveMeOddNumbers() {
     yield 1
     yield 3
     yield 5

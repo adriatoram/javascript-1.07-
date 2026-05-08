@@ -12,7 +12,7 @@ test('17_public-class-fields-1: public class fields help us avoid .bind-ing ever
       // no volem haver de fer això...
       this.handleClick = this.handleClick.bind(this) // trist :-(
     }
-    // converteix això en un camp públic de classe perquè s'autolligui
+    // Converteix `handleClick` en un camp públic de classe utilitzant una funció fletxa (`=>`) perquè mantingui automàticament el valor correcte de `this` sense necessitat de fer `.bind(this)` al constructor.
     handleClick({target: {value}}) {
       this.props.onClick(value)
     }

@@ -11,15 +11,13 @@ test('02_arrow-1: pot substituir funcions tradicionals', () => {
 test('02_arrow-2: pot substituir funcions tradicionals #2', () => {
   const nums = [2, 5, 10]
 
-  // Substitueix la 'function' en aquesta crida a 'map' per una funció fletxa.
-  // Pista: no hauries de tenir claus ni 'return' quan acabis
+  //El següent codi ja funciona correctament i el test ja passa.
+  //Refactoritza la funció utilitzant una funció fletxa per simplificar-lo, assegurant-te que el test segueix passant.
+  //Pista: una funció fletxa amb una sola expressió pot ometre les claus i el `return`.
 
   const squares = nums.map(function(num) {
     return num * num
   })
-  const funcSource = squares.map.toString();
-
-  expect(funcSource.includes('=>')).toBe(true);
   
   expect(squares.shift()).toBe(4)
   expect(squares.shift()).toBe(25)
@@ -57,7 +55,9 @@ test('02_arrow-4: pot fer que les cadenes de filtres d\'arrays siguin més manej
     {type: 'CD', name: 'JT Best Hits', price: 2.25, qty: 6},
   ]
 
-  // SUBSTITUEIX TOTES LES FUNCIONS REGULARS PER FUNCIONS FLETXA
+  // El següent codi funciona correctament amb funcions tradicionals i el test ja passa.
+  // Refactoritza totes les funcions utilitzant funcions fletxa per fer el codi més concís i llegible, assegurant-te que el test segueix passant.
+
   const shoppingList = data
     .filter(function(d) {
       return d.type != 'Widget'
@@ -71,17 +71,7 @@ test('02_arrow-4: pot fer que les cadenes de filtres d\'arrays siguin més manej
     .map(function(d) {
       return d.name
     }) // Extreu només el nom de cada element
-
-
-  const filterSource1 = data.filter.toString();
-  const filterSource2 = shoppingList.filter.toString();
-  const sortSource = shoppingList.sort.toString();
-  const mapSource = shoppingList.map.toString();
-
-  expect(filterSource1.includes('=>')).toBe(true);
-  expect(filterSource2.includes('=>')).toBe(true);
-  expect(sortSource.includes('=>')).toBe(true);
-  expect(mapSource.includes('=>')).toBe(true);    
+  
   expect(shoppingList.shift()).toBe('Bacon')
   expect(shoppingList.shift()).toBe('JT Best Hits')
 })

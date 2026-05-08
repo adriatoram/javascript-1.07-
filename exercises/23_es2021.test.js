@@ -1,5 +1,5 @@
 test('23_es2021-1: Logical assignment operators (&&=, ||=, ??=)', () => {
-  // Utilitza els operadors d'assignació lògica (&&=, ||=, ??=) per modificar les variables a, b i c.
+  // Modifica les variables `a`, `b` i `c` utilitzant els operadors d’assignació lògica (`&&=`, `||=` i `??=`) i fes que el test passi.
   let a = true
   let b = false
   let c = null
@@ -12,21 +12,21 @@ test('23_es2021-1: Logical assignment operators (&&=, ||=, ??=)', () => {
 })
 
 test('23_es2021-2: Numeric separators improve readability', () => {
-  // Declara un número gran utilitzant separadors numèrics per millorar la llegibilitat.
+  // Canvia `null` per un número gran utilitzant separadors numèrics (`_`) per millorar la llegibilitat i fes que el test passi.
   const largeNumber = null // Resol aquí...
 
   expect(largeNumber).toBe(1000000)
 })
 
 test('23_es2021-3: Promise.any returns the first resolved promise', async () => {
-  // Utilitza Promise.any per obtenir la primera promesa resolta.
+  // Utilitza `await` amb `Promise.any()` per obtenir la primera promesa resolta i fes que el test passi.
   const promises = [
     Promise.reject('Error'),
     Promise.resolve('First resolved'),
     Promise.resolve('Second resolved'),
   ]
 
-  const result = null // Resol aquí...
+  const result = Promise.any(promises)
 
   expect(result).toBe('First resolved')
 })

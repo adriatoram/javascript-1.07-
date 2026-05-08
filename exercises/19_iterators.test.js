@@ -28,13 +28,14 @@ test('19_iterators-3: can iterate over an iterable with for .. of', () => {
 
 test('19_iterators-4: can use the ... operator on the iterator', () => {
   const set = new Set([1, 2, 2, 3])
-  // utilitza destructuring i l'operador ... per crear una
-  // variable `rest` que només tingui els dos últims elements.
+  // Canvia la línia de sota utilitzant destructuring i l’operador rest (`...`) per ignorar el primer element del `Set` i fer que el test passi.
   const [rest] = set
   expect(rest).toEqual([2, 3])
 })
 
-test('19_iterators-5: can create a custom iterator', () => {
+//Els exercicis 5 i 6 són més avançats que la resta del sprint i es consideren opcionals. Pots intentar-los com a repte extra un cop hagis completat la resta d’exercicis.
+
+/* test('19_iterators-5: can create a custom iterator', () => {
   const randomRandomNumbersGenerator = {
     max: 20,
     min: 10,
@@ -56,9 +57,9 @@ test('19_iterators-5: can create a custom iterator', () => {
     const numbersInBounds = randomNumbers.every(num => num <= max && num >= min)
     return !tooManyNumbers && !tooFewNumbers && numbersInBounds
   }
-})
+}) */
 
-test('19_iterators-6: can create a custom iterator with a generator', () => {
+/* test('19_iterators-6: can create a custom iterator with a generator', () => {
   const randomRandomNumbersGenerator = {
     max: 20,
     min: 10,
@@ -75,4 +76,4 @@ test('19_iterators-6: can create a custom iterator with a generator', () => {
     const numbersInBounds = randomNumbers.every(num => num <= max && num >= min)
     return !tooManyNumbers && !tooFewNumbers && numbersInBounds
   }
-})
+}) */

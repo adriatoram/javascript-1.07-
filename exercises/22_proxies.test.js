@@ -20,6 +20,7 @@ const getCharacter = () => {
 
 test('22_proxies-1: can wrap an existing object', () => {
   const character = getCharacter()
+  // Canvia la línia de sota per crear un `Proxy` que embolcalli l’objecte `character` utilitzant un handler buit (`{}`) i fes que el test passi.
   const proxy = character
   // Comprova que el proxy no és igual referencialment però sí igual profundament a l'objecte original
   expect(proxy).not.toBe(character) // referencialment diferent

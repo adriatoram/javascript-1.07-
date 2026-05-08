@@ -1,5 +1,3 @@
-// Exercici 1.3: Callbacks
-
 test('27_callbacks-1: Basic callback - invoke callback passing a number', () => {
   // Crea una funció 'processNumber' que accepti un número i una funció callback
   // La funció ha d'invocar el callback passant-li el número
@@ -66,7 +64,7 @@ test('27_callbacks-4: Callbacks with arrays - process elements', () => {
   expect(results).toEqual(['A', 'B', 'C'])
 })
 
-test('27_callbacks-5: Process string with callback - transform to uppercase', () => {
+test('27_callbacks-5: Process string with callback - transform to uppercase', (done) => {
   // Crea una funció 'processString' que accepti una cadena i un callback
   // La funció ha de convertir la cadena a majúscules i després invocar el callback
   // amb la cadena transformada
@@ -77,6 +75,18 @@ test('27_callbacks-5: Process string with callback - transform to uppercase', ()
 
   processString('hola món', (transformedString) => {
     expect(transformedString).toBe('HOLA MÓN')
+    done()
+  })
+})
+
+test('27_callbacks-5: Process string with callback - transform to uppercase', (done) => {
+  const processString = (/* ... */) => {
+    /* ... */
+  }
+
+  processString('hola món', (transformedString) => {
+    expect(transformedString).toBe('HOLA MÓN')
+    done()
   })
 })
 

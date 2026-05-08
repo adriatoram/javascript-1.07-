@@ -20,10 +20,3 @@ test('24_es2022-2: at() method for indexing arrays and strings', () => {
   expect(lastArrayElement).toBe(4)
   expect(secondLastStringChar).toBe('l')
 })
-
-test('24_es2022-3: Top-level await in modules', async () => {
-  // Utilitza await a nivell superior per resoldre una promesa.
-  const result = null // Resol aquí...
-
-  expect(result).toBe('Top-level await works!')
-})
