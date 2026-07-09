@@ -22,7 +22,7 @@ test('02_arrow-2: pot substituir funcions tradicionals #2', () => {
   //Pista: una funció fletxa amb una sola expressió pot ometre les claus i el `return`.
 
   const squares = nums.map((num) => num * num)
-  
+
   expect(squares.shift()).toBe(4)
   expect(squares.shift()).toBe(25)
   expect(squares.shift()).toBe(100)
@@ -36,11 +36,10 @@ test('02_arrow-3: lliga `this` a l\'àmbit d\'avaluació, no a l\'àmbit d\'exec
   const person = {
     name: 'Aaron',
     greetFriends: function (friends) {
-      return friends.map(function (friend) {
-        return this.name + ' saluda a ' + friend
-      })
-    },
-  }
+      return friends.map((friend) => this.name + ' saluda a ' + friend)
+    }
+  },
+
 
   const friendsArray = ['Naomi', 'Jojo', 'Ryan', 'Owen']
   expect(() => person.greetFriends(friendsArray)).not.toThrow()
