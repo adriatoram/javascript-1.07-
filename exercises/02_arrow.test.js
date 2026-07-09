@@ -21,10 +21,8 @@ test('02_arrow-2: pot substituir funcions tradicionals #2', () => {
   //Refactoritza la funció utilitzant una funció fletxa per simplificar-lo, assegurant-te que el test segueix passant.
   //Pista: una funció fletxa amb una sola expressió pot ometre les claus i el `return`.
 
-  const squares = nums.map(function (num) {
-    return num * num
-  })
-
+  const squares = nums.map((num) => num * num)
+  
   expect(squares.shift()).toBe(4)
   expect(squares.shift()).toBe(25)
   expect(squares.shift()).toBe(100)
