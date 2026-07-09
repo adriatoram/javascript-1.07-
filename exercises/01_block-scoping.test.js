@@ -2,6 +2,8 @@ const noop = () => {}
 test('01_scope-1: can be used in place of `var`', () => {
   // Declara bandName utilitzant 'let'
   // Declara isBestBand utilitzant 'let'
+let bandName = 'Queen';
+let isBestBand = true
 
   expect(bandName).toBe('Queen')
   expect(isBestBand).toBe(true)
