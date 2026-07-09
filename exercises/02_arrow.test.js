@@ -62,18 +62,10 @@ test('02_arrow-4: pot fer que les cadenes de filtres d\'arrays siguin més manej
   // Refactoritza totes les funcions utilitzant funcions fletxa per fer el codi més concís i llegible, assegurant-te que el test segueix passant.
 
   const shoppingList = data
-    .filter(function (d) {
-      return d.type != 'Widget'
-    }) // Elimina els Widgets
-    .filter(function (d) {
-      return d.price < 5
-    }) // Troba només els elements restants amb preu < 5
-    .sort(function (a, b) {
-      return a.qty - b.qty
-    }) // Ordena per quantitat, descendent
-    .map(function (d) {
-      return d.name
-    }) // Extreu només el nom de cada element
+    .filter((d) => d.type != 'Widget') // Elimina els Widgets
+    .filter((d) => d.price < 5) // Troba només els elements restants amb preu < 5
+    .sort((a, b) => a.qty - b.qty) // Ordena per quantitat, descendent
+    .map((d) => d.name) // Extreu només el nom de cada element
 
   expect(shoppingList.shift()).toBe('Bacon')
   expect(shoppingList.shift()).toBe('JT Best Hits')
