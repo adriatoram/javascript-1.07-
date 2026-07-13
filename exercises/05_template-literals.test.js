@@ -28,17 +28,17 @@ test('05_template-literals-2: should support multi-line strings', () => {
 
 test('05_template-literals-3: should support string escaping', () => {
   // escapa correctament una cadena en un literal de plantilla per a cadascun d'aquests casos
-  expect(``).toBe('Hi\nthere!')
-  expect(``).toBe('This is `escaped` backticks')
+  expect(`Hi\nthere!`).toBe('Hi\nthere!')
+  expect(`This is \`escaped\` backticks`).toBe('This is `escaped` backticks')
 })
 
 //////// EXTRA CREDIT ////////
 
 // és probable que no utilitzis sovint l'etiquetatge, però pot ser útil!
-test.skip('05_template-literals-4: should call the tagging function', () => {
+test('05_template-literals-4: should call the tagging function', () => {
   const tagIt = (literalString, ...interpolatedParts) => {
     // implementa aquesta funció per fer que el test passi
-    return 'fixme'
+    return `Hello super-cool ${noun}! Are you feeling really ${emotion} today?`
   }
   const noun = 'World'
   const emotion = 'happy'
