@@ -1,3 +1,4 @@
+
 test('09_spread-1: should be able to call a function and spread the arguments', () => {
   // Utilitza l'operador spread per passar arguments a una funció
   const args = ['a', 'b', 'c']
@@ -20,6 +21,8 @@ test('09_spread-2: should be easier to concatenate arrays', () => {
   const array1 = [1, 2, 3]
 
 
+  const result = [...array1, ...[4, 5, 6]];
+
   expect(result).toEqual([1, 2, 3, 4, 5, 6])
 })
 
@@ -28,6 +31,11 @@ test('09_spread-3: should be able to merge properties from objects', () => {
   const obj1 = {
     foo: 'bar',
     baz: 'foobar',
+  }
+
+  const result = {
+    ...obj1,
+    eggs: 'spam'
   }
 
 
