@@ -1,25 +1,27 @@
 test('07_object-literal-1: can use shorthand for property names', () => {
-  const  createMonster = (name, power) => {
-    // Utilitza la nova sintaxi del literal d'Object, per tornar un literal que permeti passar els testos
-    // return {
-    //   type: 'Monster',
-    //   name: name,
-    //   power: power,
-    //   attack(target){
-    //     return `${this.name} attacked ${target.name}`;
-    //   }
-    // }
+  const createMonster = (name, power) => {
+    return {
+      type: 'Monster',
+      name,
+      power,
+      attack(target) {
+        return `${this.name} attacked ${target.name}`;
+      }
+    }
   }
 
   const godzilla = createMonster('Godzilla', 1000)
   const mechaGodzilla = createMonster('MechaGodzilla', 5000)
+
   expect(godzilla.name).toBe('Godzilla')
   expect(godzilla.power).toBe(1000)
   expect(godzilla.attack(mechaGodzilla)).toBe('Godzilla attacked MechaGodzilla')
 })
 
+
+
 test('07_object-literal-2: can use expressions as property names', () => {
-  const  createCandy = (type, description) => {
+  const createCandy = (type, description) => {
     return {
       tasty: true,
       type,
