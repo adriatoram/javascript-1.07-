@@ -1,19 +1,22 @@
 test('03_new-apis-1: should be easier to determine whether a string includes another', () => {
   const sentence = 'It was the best of times. It was the worst of times'
   // crea una variable anomenada `result` que es defineixi com una crida a sentence.includes
+  let result = sentence.includes("times");
   expect(result).toBe(true)
 })
 
 test('03_new-apis-2: should be easier to repeat a string', () => {
   const repeated = 'abc123'
   // crea una variable anomenada `result` que sigui el resultat de repetir la cadena 4 vegades
+  let result = repeated.repeat(4);
   expect(result).toBe('abc123abc123abc123abc123')
 })
 
 test('03_new-apis-3: should be able to take an array-like object and convert it into an array', () => {
-  const obj = {length: 3, 0: 'a', 1: 'b', 2: 'c'}
+  const obj = { length: 3, 0: 'a', 1: 'b', 2: 'c' }
   // això és encara més útil amb un NodeList com el retornat per document.querySelector
   // crea una variable anomenada `result` i assigna-li una crida a Array.from
+  const result = Array.from(obj);
   expect(result).toEqual(['a', 'b', 'c'])
 })
 
@@ -50,10 +53,10 @@ test('03_new-apis-5: should be easy to copy properties from one object to anothe
     d: true,
     p: ['x', 'y', 'z'],
   }
-  
+
   //Combina les fonts dins d'un nou objecte utilitzant Object.assign.
   //Tingues en compte que Object.assign fa una còpia superficial (shallow copy), així que les propietats internes seran sobrescrites, no fusionades.
-  
+
   expect(result).toEqual({
     a: {
       b: 'c',
